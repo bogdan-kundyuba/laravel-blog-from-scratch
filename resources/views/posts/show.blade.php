@@ -28,6 +28,24 @@
             @endforeach
         </ul>
     </div>
+    
+    <!-- Add a comment -->
+
+    <div class="card">
+        <div class="card-body">
+            <form method="POST" action="/public/posts/{{ $post->id }}/comments">
+                @csrf
+                <div class="form-group">
+                    <textarea name="body" placeholder="Your comment here." class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Add comment</button>  
+                </div>
+            </form>
+            @include('layouts.errors')
+        </div>
+    </div>
 
 </div>
 
