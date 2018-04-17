@@ -5,6 +5,8 @@
         {{ $post->title }}
         </a>
     </h2>
+    
+    {{ $post->user['name'] }}
 
     <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
 
