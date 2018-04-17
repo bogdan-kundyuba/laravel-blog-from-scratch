@@ -11,18 +11,18 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
     
+    public function user() //$comment->post->user
+    {  
+        $this->belongsTo(User::class);
+    }
+    
     public function addComment($body)
     {
-        //$this->comments()->create();
+//        $this->comments()->create();
         
         $this->comments()->create(compact('body'));
         
-//        Comment::create([
-//            
-//            'body' => $body,
-//            'post_id' => $this->id,
-//            
-//        ]);
+//        $this->comments()->create(compact('body', '$user_id'));
     }
-
+    
 }

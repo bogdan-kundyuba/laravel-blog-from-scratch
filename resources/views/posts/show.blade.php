@@ -5,7 +5,7 @@
 
 <div class="col-sm-8 blog-main">
 
-    <h1>{{ $post->title }}</h1>
+    <h1>{{ $post->id }}</h1>
 
     {{ $post->body }}
 
