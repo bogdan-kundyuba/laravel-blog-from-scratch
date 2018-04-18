@@ -37,17 +37,8 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
     
-    public function publish()
+    public function publish(Post $post)
     {
-        
+        $this->posts()->save($post);
     }
-    
-//    public function commentsOn(Post $post, $body)
-//    {
-//        return (new Comment(compact('body')))
-//            ->user()->associate($this)
-//            ->post()->associate($post)
-//            ->save();
-//    }
-
 }

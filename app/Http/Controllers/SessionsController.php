@@ -6,9 +6,29 @@ use Illuminate\Http\Request;
 
 class SessionsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => 'destroy']);
+    }
+    
     public function create()
     {
-        //
+        return view('sessions.create');
+    }
+    
+    public function store()
+    {
+        // Attemp to authentificate the user
+        
+        if (! auth()->attempt(request(['email', 'password'])))
+        {
+            return back()->withErrors([
+                'message' => 'Please check your email or password.'
+            ]);
+        }
+        
+        // Redirect to home page
+        return redirect()->home();
     }
     
     public function destroy()

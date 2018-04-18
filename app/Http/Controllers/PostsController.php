@@ -37,28 +37,15 @@ class PostsController extends Controller
         
         // Create a new post using a request data
         
-//        $post = new Post;       
-//        $post->title = request('title');
-//        $post->body = request('body');
-//        
-//        // Save it to the database
-//        $post->save();
-        
         $this->validate(request(), [
             'title' => 'required',
             'body' => 'required',  
         ]);
         
-//        auth()->user()->publish(
-//            new Post(request('title', 'body'))    
-//        );
+        auth()->user()->publish(
+            new Post(request(['title', 'body']))    
+        );
 
-        Post::create([
-            'title' => request('title'),
-            'body' => request('body'), 
-            'user_id' => auth()->id(),
-            ]);
-        
         // And then redirect to the home page
         
         return redirect('/');

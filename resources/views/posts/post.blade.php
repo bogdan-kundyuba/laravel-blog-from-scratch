@@ -5,8 +5,7 @@
         {{ $post->title }}
         </a>
     </h2>
-    
-    {{ $post->user['name'] }}
+    {{ $post->user('name') }} on
 
     <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
 

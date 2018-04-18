@@ -15,7 +15,7 @@ class CommentsController extends Controller
         $this->validate(request(), ['body' => 'required|min:3']);
         
         //Add a comment to post
-//        auth()->user()->commentsOn($post, $request->body);
+        
         $post->addComment(request('body'));
 
         return back();
