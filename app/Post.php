@@ -4,6 +4,8 @@ namespace App;
 
 use App\Model;
 
+use Carbon\Carbon;
+
 class Post extends Model
 {
     public function comments()
@@ -13,7 +15,7 @@ class Post extends Model
     
     public function user() //$comment->post->user
     {  
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
     
     public function addComment($body)
@@ -22,6 +24,23 @@ class Post extends Model
         $user_id = auth()->id();
         
         $this->comments()->create(compact('body', 'user_id'));
+    }
+    
+    public function scopeFilter($query, $filters)
+    {
+        if (isset($filters['month']))
+        {
+            if ($month = $filters['month']) {
+                $query->whereMonth('created_at', Carbon::parse($month)->month);
+            }
+        }
+
+        if (isset($filters['year']))
+        {
+            if ($year = $filters['year']) {
+                $query->whereYear('created_at', $year);
+            }
+        }
     }
     
 }

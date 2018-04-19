@@ -4,7 +4,7 @@
 
 <div class="col-md-8">
 
-    <h1>Sign in</h1>
+    <h1>Войти</h1>
 
     <form method="POST" action="/public/login">
         @csrf
