@@ -7,22 +7,21 @@
     </div>
     <div class="sidebar-module">
         <h4>Archives</h4>
-        <ol class="list-unstyled">
+        <ol class="list-unstyled">   
        @foreach($archives as $stats)
             <li>
                 <a href="/public/?month={{ $stats['month'] }}&year={{ $stats['year'] }}">
-                    {{ $stats['month'] . ' ' . $stats['year'] }}</a>
+                {{ $stats['month'] . ' ' . $stats['year'] }}</a>
             </li>
-            
-            @endforeach
+        @endforeach
         </ol>
     </div>
     <div class="sidebar-module">
         <h4>Elsewhere</h4>
         <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://facebook.com/">Facebook</a></li>
         </ol>
     </div>
-</div><!-- /.blog-sidebar 
+</div>
