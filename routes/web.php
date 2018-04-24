@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 //dd(resolve('App\Billing\Stripe'));
 
 
