@@ -47337,7 +47337,7 @@ if (false) {
 /* 43 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\nundefined\r\n                                                                          ^\r\n      Invalid CSS after '...:300,400,600\");': expected 1 selector or at-rule, was \"Variables\"\r\n      in c:\\xampp\\htdocs\\test.site\\resources\\assets\\sass\\app.scss (line 3, column 76)\n    at runLoaders (c:\\xampp\\htdocs\\test.site\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at c:\\xampp\\htdocs\\test.site\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at c:\\xampp\\htdocs\\test.site\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (c:\\xampp\\htdocs\\test.site\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (c:\\xampp\\htdocs\\test.site\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.done [as callback] (c:\\xampp\\htdocs\\test.site\\node_modules\\neo-async\\async.js:7921:18)\n    at options.error (c:\\xampp\\htdocs\\test.site\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ })
 /******/ ]);

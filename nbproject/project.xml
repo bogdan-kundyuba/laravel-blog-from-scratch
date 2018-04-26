@@ -9,6 +9,7 @@
             <word>bstext</word>
             <word>endcomponent</word>
             <word>endif</word>
+            <word>foreach</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

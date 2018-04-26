@@ -13,9 +13,10 @@ class PostsController extends Controller
     }
     
     public function index()
-    {
+    {   
         $posts = Post::latest()
                 ->filter(request(['month', 'year']))
+                ->with('tags')
                 ->get();
         
         return view('posts.index', compact('posts'));

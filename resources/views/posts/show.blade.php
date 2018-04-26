@@ -4,8 +4,21 @@
 @section('content')
 
 <div class="col-sm-8 blog-main">
-
     <h1>{{ $post->title }}</h1>
+    
+    @if(count($post->tags))
+    
+    <ul>
+        @foreach($post->tags as $tag)
+        <li>
+            <a href="/public/tags/{{ $tag->name }}">
+                {{ $tag->name }}
+            </a>
+        </li>
+        @endforeach
+    </ul>
+    
+    @endif
 
     {{ $post->body }}
 
@@ -17,11 +30,9 @@
             @foreach($post->comments as $comment)
 
             <li class="list-group-item">
-
                 <strong>
                     {{ $comment->created_at->diffForHumans() }}: &nbsp;
                 </strong>
-
                 {{ $comment->body }} 
             </li>
 
@@ -42,6 +53,7 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add comment</button>  
                 </div>
+                
             </form>
             @include('layouts.errors')
         </div>
